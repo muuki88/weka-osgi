@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/nz.ac.waikato.cs.weka.feature_3.7.6.qualifier.jar" id="nz.ac.waikato.cs.weka.feature" version="3.7.6.qualifier">
+   <feature url="features/nz.ac.waikato.cs.weka.feature_3.7.6.jar" id="nz.ac.waikato.cs.weka.feature" version="3.7.6">
       <category name="nz.ac.waikato.cs.weka"/>
    </feature>
    <category-def name="nz.ac.waikato.cs.weka" label="Weka"/>

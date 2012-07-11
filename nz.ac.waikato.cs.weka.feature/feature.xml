@@ -2,7 +2,7 @@
 <feature
       id="nz.ac.waikato.cs.weka.feature"
       label="Weka Feature"
-      version="3.7.6">
+      version="3.7.6.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

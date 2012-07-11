@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Weka
 Bundle-SymbolicName: nz.ac.waikato.cs.weka
-Bundle-Version: 3.7.6
+Bundle-Version: 3.7.6.qualifier
 Bundle-ClassPath: weka.jar
 Export-Package: java_cup.runtime,
  org.pentaho.packageManagement,
