@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nz.ac.waikato.cs.weka</groupId>
+  <artifactId>weka-osgi</artifactId>
+  <version>3.7.6-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <properties>
+    <tycho.version>0.15.0</tycho.version>
+    <wagon.version>1.0-beta-6</wagon.version>
+  </properties>
+  <modules>
+    <module>nz.ac.waikato.cs.weka</module>
+    <module>nz.ac.waikato.cs.weka.feature</module>
+    <module>nz.ac.waikato.cs.weka.site</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>ftp-repository</id>
+      <url>ftp://mukis.de</url>
+    </repository>
+  </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+	<!-- does not work
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-packaging-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <format>'myprefix_'yyyyMMddHHmm</format>
+        </configuration>
+	-->
+</plugin>
+    </plugins>
+    <extensions>
+      <!-- Enabling the use of FTP -->
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ftp</artifactId>
+         <version>${wagon.version}</version>
+      </extension>
+    </extensions>
+  </build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>tycho-snapshots</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

@@ -1,0 +1,25 @@
+## Ignore the weka.src package - must be inserted manually
+## http://sourceforge.net/projects/weka/files/weka-3-6/3.6.7/weka-3-6-7.zip/download
+weka.jar
+
+#IDE files to ignore (Netbeans, Eclipse)
+#Source directory should be ignored too
+.classpath
+.project
+.settings
+
+#ignore generated .class files
+*.class
+
+#ignore bin and target folders
+target/
+
+#except this file
+!.gitignore
+
+# generic files to ignore
+# backup files (*~) and MacOS dir file (.DS_Store)
+*~
+*.lock
+*.DS_Store
+*.out
