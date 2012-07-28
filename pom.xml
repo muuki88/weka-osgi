@@ -7,7 +7,7 @@
   <version>3.7.6</version>
   <packaging>pom</packaging>
   <properties>
-    <tycho.version>0.15.0</tycho.version>
+    <tycho.version>0.16.0-SNAPSHOT</tycho.version>
     <wagon.version>1.0-beta-6</wagon.version>
   </properties>
   <modules>
@@ -30,16 +30,29 @@
         <version>${tycho.version}</version>
         <extensions>true</extensions>
       </plugin>
-	<!-- does not work
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-packaging-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-          <format>'myprefix_'yyyyMMddHHmm</format>
-        </configuration>
+	<plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>tycho-packaging-plugin</artifactId>
+		<version>${tycho.version}</version>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-buildtimestamp-jgit</artifactId>
+				<version>${tycho.version}</version>
+			</dependency>
+		</dependencies>
+		<configuration>
+			<timestampProvider>jgit</timestampProvider>
+			<jgit.ignore>
+				pom.xml
+				.gitignore
+			</jgit.ignore>
+			<format>'v'yyyyMMdd-HHmm</format>
+			<archive>
+				<addMavenDescriptor>false</addMavenDescriptor>
+			</archive>
+		</configuration>
 	</plugin>
-	-->
     </plugins>
     <extensions>
       <!-- Enabling the use of FTP -->

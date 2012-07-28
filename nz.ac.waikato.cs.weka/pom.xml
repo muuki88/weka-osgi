@@ -8,5 +8,6 @@
     <version>3.7.6</version>
   </parent>
   <artifactId>nz.ac.waikato.cs.weka</artifactId>
+  <version>3.7.6.qualifier</version>
   <packaging>eclipse-plugin</packaging>
 </project>
