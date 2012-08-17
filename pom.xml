@@ -30,30 +30,6 @@
         <version>${tycho.version}</version>
         <extensions>true</extensions>
       </plugin>
-	<plugin>
-		<groupId>org.eclipse.tycho</groupId>
-		<artifactId>tycho-packaging-plugin</artifactId>
-		<version>${tycho.version}</version>
-
-		<dependencies>
-			<dependency>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-buildtimestamp-jgit</artifactId>
-				<version>${tycho.version}</version>
-			</dependency>
-		</dependencies>
-		<configuration>
-			<timestampProvider>jgit</timestampProvider>
-			<jgit.ignore>
-				pom.xml
-				.gitignore
-			</jgit.ignore>
-			<format>'v'yyyyMMdd-HHmm</format>
-			<archive>
-				<addMavenDescriptor>false</addMavenDescriptor>
-			</archive>
-		</configuration>
-	</plugin>
     </plugins>
     <extensions>
       <!-- Enabling the use of FTP -->
