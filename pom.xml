@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nz.ac.waikato.cs.weka</groupId>
   <artifactId>weka-osgi</artifactId>
-  <version>3.7.6-SNAPSHOT</version>
+  <version>3.7.6</version>
   <packaging>pom</packaging>
   <properties>
     <tycho.version>0.15.0</tycho.version>
@@ -17,11 +17,20 @@
   </modules>
 
   <distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
     <repository>
-      <id>ftp-repository</id>
-      <url>ftp://mukis.de</url>
+      <id>nexus</id>
+      <name>RepositoryProxy</name>
+      <url>http://metropolis:8081/nexus/content/repositories/thirdparty</url>
     </repository>
+        <!-- use the following if you ARE using a snapshot version. -->
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>RepositoryProxy</name>
+      <url>http://metropolis:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
@@ -31,14 +40,6 @@
         <extensions>true</extensions>
       </plugin>
     </plugins>
-    <extensions>
-      <!-- Enabling the use of FTP -->
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-         <artifactId>wagon-ftp</artifactId>
-         <version>${wagon.version}</version>
-      </extension>
-    </extensions>
   </build>
 	<pluginRepositories>
 		<pluginRepository>
